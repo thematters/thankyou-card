@@ -80,40 +80,41 @@
   <h1>{PUBLIC_SITE_DESCRIPTION}</h1>
   {#if !data?.searchParams?.userName}
     <p>
-      在第一行輸入你的 Matters ID，也就是個人主頁網址 @ 後面那一串（舉例：Matty 的 ID 是 hi176）；<br
-      />第二行可以自由輸入你的年末致謝詞（需 50 字內）；<br />第三行輸入你想顯示的暱稱（<b
-        >填寫後會在卡片正上方顯示喔！</b
-      >若不想顯示任何暱稱就不用填寫～）<br />——都輸入完後按下 enter 就可以囉 💌
+      下方輸入你的 Matters ID 和年度致謝詞<br />
+      卡片默認不會出現名字。如果希望露出想要的暱稱，需先自行填入喔！<br />
+      輸入完畢後點擊送出就可以擁有美美的致謝詞小卡啦 💌
     </p>
   {:else}
     <p>
-      感謝 2023
-      年的自己，希望這句致謝詞可以讓我們與過去一年的自己擊掌、對話、擁抱——那樣會更看清來時的路。<br
-      />再回身，2024廣闊而舒展。
+      希望這句致謝詞可以讓我們與過去一年的自己擊掌、對話、擁抱。<br />
+      再回身，2024 廣闊而舒展。
     </p>
-    <div class="tools-group">
-      <X
-        class="share-button"
-        text={updatedTitle}
-        url={shareUrl}
-        hashtags="2023馬特市創作成就"
-        via="MattersLab"
-        related="MattersLab"
-      />
-      <Facebook class="share-button" quote={updatedTitle} url={shareUrl} />
-      <Telegram class="share-button" text={updatedTitle} url={shareUrl} />
-      <Line class="share-button" url={shareUrl} />
-      <a href="https://Matters.Town" target="_blank" rel="noreferrer" class="share-link"
-        ><div>回到 Matters</div></a
-      >
-    </div>
   {/if}
 </header>
 
 <section>
   <div id="frame">
     {#if data?.searchParams?.userName}
+      <div class="tools-group">
+        <X
+          class="share-button"
+          text={updatedTitle}
+          url={shareUrl}
+          hashtags="2023馬特市創作成就"
+          via="MattersLab"
+          related="MattersLab"
+        />
+        <Facebook class="share-button" quote={updatedTitle} url={shareUrl} />
+        <Telegram class="share-button" text={updatedTitle} url={shareUrl} />
+        <Line class="share-button" url={shareUrl} />
+        <a href="https://Matters.Town" target="_blank" rel="noreferrer" class="share-link"
+          ><div>回到 Matters</div></a
+        >
+      </div>
+
       <ThankyouCard userData={data} {thankYouText} {alsoKnownAs} {showQrCode} bind:el={dataSvgEl} />
+
+      <button class="btn download-btn" on:click={downloadAsPng}>下載截圖</button>
     {:else}
       <form data-sveltekit-reload>
         <div class="row userNameContainer">
@@ -164,40 +165,14 @@
     {/if}
   </div>
 </section>
-{#if data?.searchParams?.userName}
-  <div class="row flex-1">
-    <div class="download-links">
-      <button class="btn" on:click={downloadAsPng}>下載截圖</button>
-    </div>
-  </div>
-{/if}
 
 <style>
   header {
-    position: relative;
-    min-height: 20rem;
+    margin: 0 auto;
   }
   h1 {
     margin: 1rem;
-    padding: 2rem 0;
-  }
-  :global(body) {
-    font-family:
-      Noto Sans CJK TC,
-      PingFang TC,
-      -apple-system,
-      BlinkMacSystemFont,
-      Segoe UI,
-      Roboto,
-      Helvetica,
-      Arial,
-      Hiragino Sans GB,
-      Heiti TC,
-      Microsoft JhengHei,
-      Microsoft YaHei UI,
-      Microsoft YaHei,
-      sans-serif;
-    letter-spacing: 0em;
+    padding: 1rem 0 0;
   }
 
   section {
@@ -210,6 +185,7 @@
 
   div#frame {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -238,6 +214,7 @@
       Microsoft YaHei UI,
       Microsoft YaHei,
       sans-serif;
+    width: 100%;
   }
 
   .row {
@@ -254,7 +231,8 @@
   }
 
   form .row input[type='text'],
-  form .row textarea {
+  form .row textarea,
+  button.btn {
     font-size: 1.1rem;
     border: 1px solid #ccc;
     padding: 0.5rem 1rem;
@@ -297,8 +275,8 @@
     border: 1px solid black;
     border-radius: 0.5rem;
     box-sizing: content-box;
-    background-color: #278e7b;
-    color: black;
+    background-color: var(--color-theme-1);
+    color: white;
     padding: 0.5rem 1rem;
     font-size: 16px;
     cursor: pointer;
@@ -315,42 +293,33 @@
     background-color: #cccccc;
   }
 
-  .download-links {
-    margin-bottom: 1rem;
+  button.btn.download-btn {
+    width: unset;
+    margin: 1rem 0;
   }
 
   .tools-group {
-    position: absolute;
-    right: 0;
-    bottom: 0.25rem;
+    align-self: flex-end;
     margin: 0.5rem 0;
-    padding-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-  .tools-group > :global(* + *) {
-    margin-left: 0.5rem;
+    gap: 1rem;
   }
   .tools-group :global(.share-button) {
-    margin-left: 0.5rem;
     border-radius: 0.5rem;
   }
   .tools-group a.share-link {
-    margin-left: 2rem;
+    margin-left: 1rem;
     box-sizing: border-box;
     border: 1px dotted #grey;
   }
 
-  @media (min-width: 768px) {
-    div#frame > :global(svg) {
+  @media (min-width: 720px) {
+    div#frame {
       width: 500px;
-      height: 500px;
     }
 
-    header {
-      min-height: 16rem;
-    }
     form .row {
       justify-content: center;
     }
