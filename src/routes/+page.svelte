@@ -21,7 +21,7 @@
   let userName = data?.searchParams?.userName?.trim()?.replace(/^@+/, '');
   let thankYouText = (data?.searchParams?.text || '').substring(0, 50);
 
-  let alsoKnownAs = (data?.searchParams?.aka || '').substring(0, 17);
+  let aka = (data?.searchParams?.aka || '').substring(0, 17);
   let showQrCode = data?.searchParams?.userName ? 'showQrCode' in data?.searchParams : true;
   $: displayName = (data?.data?.user?.displayName ?? data?.data?.displayName)?.trim() || '';
 
@@ -112,7 +112,7 @@
         >
       </div>
 
-      <ThankyouCard userData={data} {thankYouText} {alsoKnownAs} {showQrCode} bind:el={dataSvgEl} />
+      <ThankyouCard userData={data} {thankYouText} {aka} {showQrCode} bind:el={dataSvgEl} />
 
       <button class="btn download-btn" on:click={downloadAsPng}>下載截圖</button>
     {:else}
@@ -141,15 +141,15 @@
           />
         </div>
         <div class="row">
-          <!-- <label for="alsoKnownAs">Also Known As:</label> -->
+          <!-- <label for="aka">Also Known As:</label> -->
           <input
             type="text"
             name="aka"
-            id="alsoKnownAs"
+            id="aka"
             size={17}
             maxlength={17}
-            placeholder="自由輸入暱稱、綽號、頭銜等，也可以留白"
-            bind:value={alsoKnownAs}
+            placeholder="暱稱（選填），17 字內"
+            bind:value={aka}
           />
         </div>
         <div class="row showQrCode">
@@ -265,6 +265,7 @@
   }
   form .row.showQrCode {
     justify-content: left;
+    margin: 1.5rem 0;
   }
 
   .flex-1 {
