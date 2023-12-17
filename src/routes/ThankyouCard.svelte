@@ -75,28 +75,31 @@
 --text-major-line-height: {textMajorLineHeight}px;"
 >
   <style>
-    p.text {
-      margin: 0;
-      text-align: left;
-      color: white;
+    p.text,
+    text {
       font-family:
         jf-jinxuan,
-        Noto Sans CJK TC,
-        PingFang TC,
+        'Noto Sans CJK TC',
+        'PingFang TC',
         -apple-system,
         BlinkMacSystemFont,
-        Segoe UI,
+        'Segoe UI',
         Roboto,
         Helvetica,
         Arial,
-        Hiragino Sans GB,
-        Heiti TC,
-        Microsoft JhengHei,
-        Microsoft YaHei UI,
-        Microsoft YaHei,
+        'Hiragino Sans GB',
+        'Heiti TC',
+        'Microsoft JhengHei',
+        'Microsoft YaHei UI',
+        'Microsoft YaHei',
         sans-serif;
+      margin: 0;
+      color: white;
+    }
+    p.text {
       font-size: var(--text-major-font-size);
       line-height: var(--text-major-line-height);
+      text-align: left;
       height: 100%;
       overflow: auto;
     }
@@ -131,7 +134,6 @@
       fill="#FFA4E1"
       xml:space="preserve"
       style="white-space: pre"
-      font-family="jf-jinxuan"
       font-size="48"
       font-weight="bold"
       letter-spacing="0.05em"
@@ -141,7 +143,6 @@
       fill="#FFDD71"
       xml:space="preserve"
       style="white-space: pre"
-      font-family="jf-jinxuan"
       font-size="64"
       font-weight="bold"
       letter-spacing="0.05em"
@@ -162,7 +163,6 @@
       fill="#FFDD71"
       xml:space="preserve"
       style="white-space: pre"
-      font-family="jf-jinxuan"
       font-size="64"
       font-weight="bold"
       letter-spacing="0.05em"><tspan x="170" y="243.32">2023年，給自己的致謝詞</tspan></text

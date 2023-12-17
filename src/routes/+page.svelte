@@ -194,26 +194,10 @@
     /* background: teal; */
   }
   div#frame > :global(svg) {
-    font-family:
-      Jf jinxuan,
-      Noto Serif TC,
-      Noto Serif SC,
-      Noto Serif,
-      Songti TC,
-      Songti SC,
-      PingFang TC,
-      apple-system,
-      BlinkMacSystemFont,
-      Segoe UI,
-      Roboto,
-      Helvetica,
-      Arial,
-      Hiragino Sans GB,
-      Heiti TC,
-      Microsoft JhengHei,
-      Microsoft YaHei UI,
-      Microsoft YaHei,
-      sans-serif;
+    font-family: jf-jinxuan, 'Noto Serif TC', 'Noto Serif SC', 'Noto Serif', 'Songti TC',
+      'Songti SC', 'PingFang TC', apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
+      'Helvetica', 'Arial', 'Hiragino Sans GB', 'Heiti TC', 'Microsoft JhengHei',
+      'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
     width: 100%;
   }
 
