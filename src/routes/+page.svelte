@@ -74,6 +74,9 @@
   <meta property="twitter:url" content={shareUrl} />
   <meta property="meta:userDescription" content={`${data?.user?.info?.description}`} />
   <link rel="canonical" href={shareUrl} />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
 </svelte:head>
 
 <header>

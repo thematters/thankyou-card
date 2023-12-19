@@ -77,22 +77,7 @@
   <style>
     p.text,
     text {
-      font-family:
-        jf-jinxuan,
-        'Noto Sans CJK TC',
-        'PingFang TC',
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Helvetica,
-        Arial,
-        'Hiragino Sans GB',
-        'Heiti TC',
-        'Microsoft JhengHei',
-        'Microsoft YaHei UI',
-        'Microsoft YaHei',
-        sans-serif;
+      font-family: jf-jinxuan, 'Noto Serif TC', 'Noto Serif SC', 'Noto Serif', 'Songti TC', 'Songti SC', 'PingFang TC', apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Hiragino Sans GB', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
       margin: 0;
       color: white;
     }
@@ -101,6 +86,7 @@
       line-height: var(--text-major-line-height);
       text-align: left;
       height: 100%;
+      font-weight: 500;
       overflow: auto;
     }
   </style>
@@ -144,7 +130,7 @@
       xml:space="preserve"
       style="white-space: pre"
       font-size="64"
-      font-weight="bold"
+      font-weight="700"
       letter-spacing="0.05em"
       text-anchor="middle"><tspan x="500" y="261.32">2023年，給自己的致謝詞</tspan></text
     >
