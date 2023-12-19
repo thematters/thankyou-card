@@ -91,6 +91,15 @@
     }
   </style>
 
+  {#if aka}
+  <style>
+    p.text {
+      text-align: center;
+    }
+  </style>
+  {/if}
+
+
   <rect width="1000" height="1000" fill="url(#pattern0)" />
 
   <foreignObject x="66" y={(aka ? 261.32 : 243.32) + 40} width="868" height="400">

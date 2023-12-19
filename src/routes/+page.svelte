@@ -212,10 +212,12 @@
   }
 
   form {
-    width: 24rem;
+    max-width: 24rem;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 100%;  
   }
+
 
   form .row input[type='text'],
   form .row textarea,
@@ -297,10 +299,12 @@
   .tools-group :global(.share-button) {
     border-radius: 0.5rem;
   }
+  .tools-group :global(.share-button > div) {
+    display: flex;
+  }
   .tools-group a.share-link {
-    margin-left: 1rem;
+    margin-left: .5rem;
     box-sizing: border-box;
-    border: 1px dotted #grey;
   }
 
   @media (min-width: 720px) {
